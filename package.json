@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/CamiRamirez/scl-2018-01-FE-markdown#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0"
+    "babel-cli": "^6.26.0",
+    "eslint": "^5.4.0"
   }
 }
