@@ -15,6 +15,10 @@
   ],
   "author": "Camila Ramírez Ponce",
   "license": "ISC",
+  "bin": {
+    "md-links": "index.js",
+    "--validate": "index.js"
+  },
   "bugs": {
     "url": "https://github.com/CamiRamirez/scl-2018-01-FE-markdown/issues"
   },
@@ -22,5 +26,9 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "eslint": "^5.4.0"
+  },
+  "dependencies": {
+    "marked": "^0.5.0",
+    "node-fetch": "^2.2.0"
   }
 }
