@@ -5,6 +5,7 @@ const path = require('path');
 const mdLinks = require('./mdlinks.js');
 const Marked = require('marked');
 const fetch = require('node-fetch');
+const colors = require('colors');
 
 //  Ruta actual del directorio (Current Working Directory)
 let currDirectory = process.cwd();
@@ -17,17 +18,23 @@ let cwdToString = Buffer.from(currDirectory);
       console.log(err.message);
     } else {
       files.forEach(file => {
-        // console.log(file);
         if (path.extname(file) === '.md') { // selecciona solo los .md
-          // console.log(file);
           fs.readFile(file, 'utf8', function(err, data) { // lee los archivos .md
             if (err) {
               console.log(err);
             } else {
-              console.log(mdLinks(data));
               mdLinks(data).forEach(element => {
+                // console.log(file.magenta, element.href, element.text.yellow);
                 fetch(`${element.href}`, {validate: true}).then((response)=>{
-                  console.log(response.url, response.status, response.statusText);
+                  let arrayLinks = {
+                    link: response.url.blue,
+                    text: element.text.magenta,
+                    title: file.cyan,
+                    status: response.status,
+                    statusText: response.statusText.green,
+                    linelinks: element.line
+                  };
+                  console.log(`Archivo: ${arrayLinks.title}, URL: ${arrayLinks.link}, Texto: ${arrayLinks.text}, Status: ${arrayLinks.status} ${arrayLinks.statusText}, Línea: ${arrayLinks.linelinks}`); 
                 });
               });
             }
@@ -36,5 +43,6 @@ let cwdToString = Buffer.from(currDirectory);
       });
     }
   });
+
 
   
