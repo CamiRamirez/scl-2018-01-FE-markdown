@@ -29,13 +29,12 @@ fs.readdir(cwdToString, (err, files) => {
             mdLinks(data).forEach(element => {
               if (validate === '--validate') {
                 fetch(`${element.href}`).then((response) => {
-                  console.log(response.url, response.status,
-                    response.statusText);
+                  console.log(`URL: ${response.url.blue},  STATUS: ${response.statusText.green} ${response.status}`);
                 }).catch((err) => {
                   console.error('El siguiente link no ha sido encontrado ' + err);
                 });
               } else {
-                console.log(file, element.text, element.href);
+                console.log(`Archivo: ${file.cyan}, Texto: ${element.text.green}, URL: ${element.href.cyan}`);
               }
             });
           }
@@ -44,6 +43,7 @@ fs.readdir(cwdToString, (err, files) => {
     });
   }
 });
+
 
 
   // mdLinks(data).forEach(element => { 
