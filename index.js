@@ -29,7 +29,7 @@ fs.readdir(cwdToString, (err, files) => {
             mdLinks(data).forEach(element => {
               if (validate === '--validate') {
                 fetch(`${element.href}`).then((response) => {
-                  console.log(`URL: ${response.url.blue},  STATUS: ${response.statusText.green} ${response.status}`);
+                  console.log(`URL: ${response.url.blue},  Status: ${response.statusText.green} ${response.status}`);
                 }).catch((err) => {
                   console.error('El siguiente link no ha sido encontrado ' + err);
                 });
