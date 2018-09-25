@@ -1,6 +1,6 @@
 {
-  "name": "scl-2018-01-fe-markdown",
-  "version": "0.0.1",
+  "name": "mdlinks-crp",
+  "version": "0.0.3",
   "description": "creación de libreria",
   "main": "index.js",
   "scripts": {
