@@ -35,6 +35,9 @@ Debes instalar las siguientes librerías con las que se ejecuta correctamente Ma
 # Versión
 0.0.3
 
+#Planificación
+ [Click aquí](https://trello.com/b/X57CqCqW/markdown)
+
 # Autor
 Camila Constanza Ramírez Ponce - Estudiante Laboratoria, Bootcamp 2018
 
